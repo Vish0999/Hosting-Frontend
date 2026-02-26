@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 function App() {
   const [file, setFile] = useState(null);
   const [result, setResult] = useState(null);
@@ -19,7 +19,7 @@ function App() {
     formData.append("file", file);
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/analyze", {
+      const response = await fetch(`${BACKEND_URL}/analyze`, {
         method: "POST",
         body: formData,
       });
@@ -45,7 +45,7 @@ const handleDownloadPDF = async () => {
   const formData = new FormData();
   formData.append("file", file);
 
-  const response = await fetch("http://127.0.0.1:5000/download-pdf", {
+  const response = await fetch(`${BACKEND_URL}/download-pdf`, {
     method: "POST",
     body: formData,
   });
