@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-const BACKEND_URL = "http://hosting-backend-production.up.railway.app/";
+const BACKEND_URL = "https://hosting-backend-production.up.railway.app/";
 function App() {
   const [file, setFile] = useState(null);
   const [result, setResult] = useState(null);
@@ -167,5 +167,5 @@ const handleDownloadPDF = async () => {
     </div>
   );
 }
-
+console.log("BACKEND_URL =", BACKEND_URL);
 export default App;
