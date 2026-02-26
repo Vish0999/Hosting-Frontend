@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const BACKEND_URL = "http://hosting-backend-production.up.railway.app/";
 function App() {
   const [file, setFile] = useState(null);
   const [result, setResult] = useState(null);
